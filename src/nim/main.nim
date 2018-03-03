@@ -1,2 +1,6 @@
-proc parseInput(input: string): string {.exportc.} =
-  return input
+import interpreter
+
+var inpt = interpreter.Interpreter()
+
+proc parseInput(input: cstring): cstring {.exportc.} =
+  return inpt.parse($input)
