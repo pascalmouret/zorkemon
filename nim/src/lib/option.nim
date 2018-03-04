@@ -40,19 +40,3 @@ method map*[T, N](self: Option[T], f: proc (t: T): N): Option[N] {.base.} =
 method foreach*[T](self: Option[T], f: proc (t: T): void): void {.base.} =
   if self.nonEmpty:
     f(self.get)
-
-when isMainModule:
-  var test: seq[int]
-  assert(Some(1).nonEmpty)
-  assert(Some(test).isEmpty)
-  assert(None(int).isEmpty)
-  assert(Some(1).get == 1)
-  try:
-    let n = None(int).get
-    assert(false)
-  except ValueError:
-    assert(true)
-  except:
-    assert(false)
-  assert(Some("value").map(proc(s: string): int = 1).get == 1)
-  assert(Some("test").flatMap(proc(s: string): Option[string] = Some(s & "value")).get == "testvalue")
