@@ -27,10 +27,4 @@ method parse*(self: Interpreter, input: string): string {.base.} =
   result = ""
   for word in col:
     result = result & word.value
-
-
-when isMainModule:
-  let intpr = Interpreter(words: @[Word(value: "go"), Word(value: "north")])
-  assert(intpr.parse("test input") == "")
-  assert(intpr.parse("go north") == "gonorth")
-  assert(intpr.parse("go west") == "go")
+    
