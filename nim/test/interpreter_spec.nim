@@ -1,5 +1,5 @@
 import unittest
-import ../src/interpreter
+import interpreter.interpreter
 
 suite "InterpreterSpecs":
   let interpreter = interpreter.newInterpreter(@[newWord("go"), newWord("west")])

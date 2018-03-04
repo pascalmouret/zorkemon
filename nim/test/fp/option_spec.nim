@@ -1,15 +1,15 @@
 import unittest
-import ../../src/lib/option
+import fp/option
 
 suite "OptionSpec":
-  var nilSeq: seq[int] = nil
+  let nilVal: seq[int] = nil
 
   test "constructor procs":
     check(Some(1).nonEmpty)
     check(not Some(1).isEmpty)
     check(None(int).isEmpty)
     check(not None(int).nonEmpty)
-    check(Some(nilSeq).isEmpty)
+    check(Some(nilVal).isEmpty)
 
   test "working getter":
     check(Some(1).get == 1)

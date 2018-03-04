@@ -1,4 +1,4 @@
-import interpreter
+import interpreter/interpreter
 
 var inpt = newInterpreter(@[newWord("go")])
 

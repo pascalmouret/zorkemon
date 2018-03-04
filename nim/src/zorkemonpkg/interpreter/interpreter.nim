@@ -1,5 +1,5 @@
 from strutils import splitWhitespace
-import lib.option
+import ../fp/option
 
 type
   Word* = ref object
@@ -27,4 +27,3 @@ method parse*(self: Interpreter, input: string): string {.base.} =
   result = ""
   for word in col:
     result = result & word.value
-    
