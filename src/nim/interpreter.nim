@@ -15,7 +15,7 @@ method wordForToken(self: Interpreter, token: string): Option[Word] {.base.} =
   for word in self.words:
     if word.value == token:
       return Some(word)
-  return None[Word]()
+  return None(Word)
 
 method parse*(self: Interpreter, input: string): string {.base.} =
   var col: seq[Word] = @[]
